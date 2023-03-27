@@ -1,0 +1,29 @@
+@media (max-width: 500px) {
+    .pokeContainer {
+        flex-direction: column;
+    }
+
+    
+
+    .pokeContainer .pokemon {
+        flex: 1;
+        flex-direction: row;
+        width: 100%;
+        padding: 10px;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .pokemon .id {
+        font-size: 20px;
+        margin: 0;
+        backdrop-filter: none;
+    }
+
+    .infPoke {
+        width: 90%;
+        margin: 0;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+}
