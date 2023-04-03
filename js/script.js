@@ -1,6 +1,8 @@
 //Elementos
 const pokeContainer = document.querySelector('.pokeContainer');
-let countPoke = 151;
+const filterSelect = document.querySelector('#filter');
+const searchInput = document.querySelector('#searchInput');
+let countPoke = 251;
 
 
 //Funções
@@ -60,8 +62,8 @@ function createType(typeInfPoke, object) {
         type2Pok.classList.add('type');
         type1Pok.innerText = typeN1;
         type2Pok.innerText = typeN2;
-        testType(typeN1, type1Pok);
-        testType(typeN2, type2Pok);
+        classTypeApplication(typeN1, type1Pok);
+        classTypeApplication(typeN2, type2Pok);
         typeInfPoke.appendChild(type1Pok);
         typeInfPoke.appendChild(type2Pok);
     } else {
@@ -69,7 +71,7 @@ function createType(typeInfPoke, object) {
         let type1Pok = document.createElement('span');
         type1Pok.classList.add('type');
         type1Pok.innerText = typeN1;
-        testType(typeN1, type1Pok);
+        classTypeApplication(typeN1, type1Pok);
         typeInfPoke.appendChild(type1Pok);
     }  
 }
@@ -84,7 +86,7 @@ function isSmaller100(n){
     }
 }
 
-function testType(type, elementType){
+function classTypeApplication(type, elementType){
     switch (type) {
         case 'grass':
             elementType.classList.add('grass');
@@ -145,5 +147,134 @@ function testType(type, elementType){
     }   
 }
 
+function filterTypePokemon() {
+    const filterOptions = document.querySelectorAll('#filter');
+    const pokemons = document.querySelectorAll('.pokemon');
+
+    const typeGrass = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.grass'));
+    const typeFire = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.fire'));
+    const typeWater = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.water'));
+    const typeEletric = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.eletric'));
+    const typeFlying = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.flying'));
+    const typeBug = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.bug'));
+    const typePoison = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.poison'));
+    const typeNormal = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.normal'));
+    const typeGround = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.ground'));
+    const typeRock = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.rock'));
+    const typeFairy = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.fairy'));
+    const typeDragon = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.dragon'));
+    const typePsychic = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.psychic'));
+    const typeDark = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.dark'));
+    const typeSteel = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.steel'));
+    const typeIce = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.ice'));
+    const typeFighting = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.fighting'));
+    const typeGhost = Array.from(pokemons).filter((pokemon) => pokemon.querySelector('.ghost'));
+
+
+    pokemons.forEach((pokemon) => {
+        pokemon.style.display = 'none';
+        if (filterOptions[0][1].selected) {
+            typeGrass.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][2].selected) {
+            typeFire.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][3].selected) {
+            typeWater.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][4].selected) {
+            typeEletric.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][5].selected) {
+            typeFlying.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][6].selected) {
+            typeBug.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][7].selected) {
+            typePoison.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][8].selected) {
+            typeNormal.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][9].selected) {
+            typeGround.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][10].selected) {
+            typeRock.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][11].selected) {
+            typeFairy.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][12].selected) {
+            typeDragon.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][13].selected) {
+            typePsychic.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][14].selected) {
+            typeDark.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][15].selected) {
+            typeSteel.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][16].selected) {
+            typeIce.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][17].selected) {
+            typeFighting.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else if (filterOptions[0][18].selected) {
+            typeGhost.forEach((poke) => {
+                poke.style.display = 'flex';
+            });
+        } else {
+            pokemon.style.display = 'flex';
+        }
+    });
+}
+
+function searchPokemon() {
+    const pokemons = document.querySelectorAll('.pokemon');
+    if (searchInput.value) {
+        let inputValue = (searchInput.value).toLowerCase();
+        pokemons.forEach((pokemon) => {
+            let pokeName = pokemon.querySelector('.name').innerHTML;
+            if (pokeName.includes(inputValue)) {
+                pokemon.style.display = 'flex';
+
+            } else {
+                pokemon.style.display = 'none';
+            }
+        });
+    } else {
+        pokemons.forEach((pokemon) => {
+            pokemon.style.display = 'flex';
+        });
+    }
+
+}
+
 //Eventos
 fetchPokemon();
+
+filterSelect.addEventListener('change',filterTypePokemon)
+
+searchInput.addEventListener('input',searchPokemon)
