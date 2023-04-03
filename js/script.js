@@ -30,7 +30,7 @@ async function createPokemon (id,object){
     let divImgPoke = document.createElement('div');
     divImgPoke.classList.add('imgPoke');
     let imgPoke = document.createElement('img');
-    imgPoke.setAttribute('src',`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`);
+    imgPoke.setAttribute('src',`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`);
     divImgPoke.appendChild(imgPoke);
 
     let divInfPoke = document.createElement('div');
