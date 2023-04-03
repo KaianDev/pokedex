@@ -3,6 +3,9 @@
         flex-direction: column;
     }
 
+    body {
+        justify-content: flex-start;
+    }
     
 
     .pokeContainer .pokemon {
@@ -20,10 +23,9 @@
         backdrop-filter: none;
     }
 
-    .infPoke {
-        width: 90%;
-        margin: 0;
-        border-radius: 10px;
-        font-size: 18px;
+    .toolBar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
