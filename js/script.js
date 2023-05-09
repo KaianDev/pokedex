@@ -2,7 +2,7 @@
 const pokeContainer = document.querySelector('.pokeContainer');
 const filterSelect = document.querySelector('#filter');
 const searchInput = document.querySelector('#searchInput');
-let countPoke = 251;
+let countPoke = 151;
 
 
 //Funções
